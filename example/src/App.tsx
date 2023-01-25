@@ -45,7 +45,7 @@ export default function App() {
 
   return (
     <TestMAPP
-      dataIn={{ type: 'type b', points: 1, text: 'sample' }}
+      dataIn={{ type: 'type a', points: 1, text: 'sample' }}
       dataLoad={response}
       dataOut={function (): void {
         throw new Error('Function not implemented.');
