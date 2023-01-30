@@ -5,39 +5,46 @@ import {
   Text,
   FlatList,
   ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
-import type { TestScreenOneDataIn, TestDataLoad } from 'src/types';
+import type { TestScreenOneDataIn, TestDataLoad, TestDataOut } from 'src/types';
 // import useViewModel from './useViewModel';
 import _ from 'lodash';
 
 type Props = {
   dataIn: TestScreenOneDataIn;
   dataLoad: TestDataLoad;
-  dataOut: (value: any) => void;
+  handleFoodname: (data: string) => void;
 };
 
-const ScreenOne = ({ dataIn, dataOut, dataLoad }: Props) => {
+const ScreenOne = ({ dataIn, handleFoodname, dataLoad }: Props) => {
   //const { onhandlePress, press } = useViewModel({ dataOut });
-  console.log(dataIn);
+  const FoddNameFunc = (data: string) => {
+    handleFoodname(data);
+  };
 
   const renderItem = ({ item }: any) => {
     //console.log(item.image);
     return (
-      <View style={styles.listContainer}>
-        <ImageBackground
-          source={{ uri: item.image }}
-          resizeMode="cover"
-          style={{
-            width: 100,
-            height: '100%',
-            opacity: 1,
-          }}
-          borderRadius={5}
-        >
-          <View style={styles.overlay}>
-            <Text style={styles.textstyle}>{item.text}</Text>
-          </View>
-        </ImageBackground>
+      <View style={[styles.listContainer, dataIn.listContainerStyle]}>
+        <TouchableOpacity onPress={() => FoddNameFunc(item?.text)}>
+          <ImageBackground
+            source={{ uri: item.image }}
+            resizeMode="cover"
+            style={{
+              width: 100,
+              height: '100%',
+              opacity: 1,
+            }}
+            borderRadius={5}
+          >
+            <View style={[styles.overlay, dataIn.overlayStyle]}>
+              <Text style={[styles.textstyle, dataIn.textStyle]}>
+                {item.text}
+              </Text>
+            </View>
+          </ImageBackground>
+        </TouchableOpacity>
       </View>
     );
   };

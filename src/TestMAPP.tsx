@@ -9,18 +9,23 @@ type Props = {
   dataIn:
     | ({ type: 'type a' } & TestScreenOneDataIn)
     | ({ type: 'type b' } & TestScreenOneDataIn);
-  dataOut: () => void;
+  dataOut: { foodName: (data: any) => void };
 };
 
 const TestMAPP = ({ dataLoad, dataIn, dataOut }: Props) => {
+  const { foodName } = dataOut;
+
+  const handleFoodname = (food: any) => {
+    foodName(food);
+  };
+
   if (dataIn.type === 'type a') {
+    console.log('natritrigger ba to');
     return (
       <ScreenOne
         dataIn={dataIn}
         dataLoad={dataLoad}
-        dataOut={function (): void {
-          throw new Error('Function not implemented.');
-        }}
+        handleFoodname={(data) => handleFoodname(data)}
       />
     );
   } else if (dataIn.type === 'type b') {

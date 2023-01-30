@@ -33,11 +33,35 @@ export default function App() {
       id: 5,
       image:
         'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
-      text: 'MilkTea',
+      text: 'gasd',
+    },
+    {
+      id: 7,
+      image:
+        'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
+      text: 'hgjhj',
+    },
+    {
+      id: 8,
+      image:
+        'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
+      text: 'asdf',
+    },
+    {
+      id: 9,
+      image:
+        'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
+      text: 'kgasog',
+    },
+    {
+      id: 10,
+      image:
+        'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
+      text: 'poe',
     },
 
     {
-      id: 6,
+      id: 11,
       image: 'https://eyeforarecipe.ca/wp-content/uploads/2011/05/raw-rice.jpg',
       text: 'Kanin',
     },
@@ -45,10 +69,15 @@ export default function App() {
 
   return (
     <TestMAPP
-      dataIn={{ type: 'type a', points: 1, text: 'sample' }}
+      dataIn={{
+        type: 'type a',
+        points: 1,
+        text: 'sample',
+        overlayStyle: { borderWidth: 2 },
+      }}
       dataLoad={response}
-      dataOut={function (): void {
-        throw new Error('Function not implemented.');
+      dataOut={{
+        foodName: (data) => console.log('food sa labas', data),
       }}
     />
   );

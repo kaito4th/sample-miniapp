@@ -21,7 +21,7 @@ const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
   const renderItem = ({ item }: any) => {
     //console.log(item.image);
     return (
-      <View style={styles.listContainer}>
+      <View style={[styles.listContainer, dataIn.listContainerStyle]}>
         <ImageBackground
           source={{ uri: item.image }}
           resizeMode="cover"
@@ -32,8 +32,10 @@ const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
           }}
           borderRadius={5}
         >
-          <View style={styles.overlay}>
-            <Text style={styles.textstyle}>{item.text}</Text>
+          <View style={[styles.overlay, dataIn.overlayStyle]}>
+            <Text style={[styles.textstyle, dataIn.textStyle]}>
+              {item.text}
+            </Text>
           </View>
         </ImageBackground>
       </View>
