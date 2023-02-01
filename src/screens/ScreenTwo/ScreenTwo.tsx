@@ -6,14 +6,14 @@ import {
   FlatList,
   ImageBackground,
 } from 'react-native';
-import type { TestScreenOneDataIn, TestDataLoad } from 'src/types';
+import type { TestScreenOneDataIn, TestDataLoad, TestDataOut } from 'src/types';
 // import useViewModel from './useViewModel';
 import _ from 'lodash';
 
 type Props = {
   dataIn: TestScreenOneDataIn;
   dataLoad: TestDataLoad;
-  dataOut: (value: any) => void;
+  dataOut: TestDataOut;
 };
 
 const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
