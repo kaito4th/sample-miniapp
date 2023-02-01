@@ -5,12 +5,17 @@ type Props = {
 
 const useViewModel = ({ dataOut }: Props) => {
   const [press, setPress] = useState(0);
+  //const [cart, setCart] = useState([])
 
   const onhandlePress = () => {
     setPress(press + 1);
   };
 
-  return { onhandlePress, press };
+  const onAddToCart = (value: any) => {
+    dataOut(value);
+  };
+
+  return { onhandlePress, press, onAddToCart };
 };
 
 export default useViewModel;

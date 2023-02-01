@@ -1,9 +1,13 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Text } from 'react-native';
 import { TestMAPP } from 'react-native-sample1';
 
 export default function App() {
+  const [values, setValues] = useState<any>([]);
+  const onAddtoCart = (item: any) => {
+    setValues([...values, item]);
+  };
   const response = [
     {
       id: 1,
@@ -33,31 +37,31 @@ export default function App() {
       id: 5,
       image:
         'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
-      text: 'gasd',
+      text: 'Waffle',
     },
     {
       id: 7,
       image:
         'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
-      text: 'hgjhj',
+      text: 'Bread',
     },
     {
       id: 8,
       image:
         'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
-      text: 'asdf',
+      text: 'Fruit',
     },
     {
       id: 9,
       image:
         'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
-      text: 'kgasog',
+      text: 'Pancake',
     },
     {
       id: 10,
       image:
         'https://tuulavintage.com/wp-content/uploads/2019/04/Boba-Milk-Tea-e1555320653922-6501524.jpg',
-      text: 'poe',
+      text: 'Steak',
     },
 
     {
@@ -66,20 +70,36 @@ export default function App() {
       text: 'Kanin',
     },
   ];
+  console.log('values: ', values);
 
   return (
-    <TestMAPP
-      dataIn={{
-        type: 'type a',
-        points: 1,
-        text: 'sample',
-        overlayStyle: { borderWidth: 2 },
-      }}
-      dataLoad={response}
-      dataOut={{
-        foodName: (data) => console.log('food sa labas', data),
-      }}
-    />
+    <>
+      <TestMAPP
+        dataIn={{
+          type: 'type a',
+          points: 1,
+          text: 'sample',
+          overlayStyle: { borderWidth: 2 },
+        }}
+        dataLoad={response}
+        dataOut={(result: any) => {
+          onAddtoCart(result);
+        }}
+      />
+
+      <TestMAPP
+        dataIn={{
+          type: 'type b',
+          points: 1,
+          text: 'sample',
+          overlayStyle: { borderWidth: 2 },
+        }}
+        dataLoad={values}
+        dataOut={(result: any) => {
+          console.log('result: ', result);
+        }}
+      />
+    </>
   );
 }
 

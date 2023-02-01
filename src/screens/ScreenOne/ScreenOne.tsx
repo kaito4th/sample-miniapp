@@ -14,20 +14,20 @@ import _ from 'lodash';
 type Props = {
   dataIn: TestScreenOneDataIn;
   dataLoad: TestDataLoad;
-  handleFoodname: (data: string) => void;
+  dataOut: TestDataOut;
 };
 
-const ScreenOne = ({ dataIn, handleFoodname, dataLoad }: Props) => {
-  //const { onhandlePress, press } = useViewModel({ dataOut });
-  const FoddNameFunc = (data: string) => {
-    handleFoodname(data);
-  };
+const ScreenOne = ({ dataIn, dataOut, dataLoad }: Props) => {
+  //const { onAddToCart } = useViewModel({ dataOut });
+  // const FoddNameFunc = (data: string) => {
+  //   dataOut(data);
+  // };
 
   const renderItem = ({ item }: any) => {
     //console.log(item.image);
     return (
       <View style={[styles.listContainer, dataIn.listContainerStyle]}>
-        <TouchableOpacity onPress={() => FoddNameFunc(item?.text)}>
+        <TouchableOpacity onPress={() => dataOut(item)}>
           <ImageBackground
             source={{ uri: item.image }}
             resizeMode="cover"
@@ -104,3 +104,4 @@ const styles = StyleSheet.create({
 });
 
 export default ScreenOne;
+``;

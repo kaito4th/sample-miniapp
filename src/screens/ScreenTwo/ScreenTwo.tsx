@@ -3,7 +3,6 @@ import {
   View,
   StyleSheet,
   Text,
-  TouchableOpacity,
   FlatList,
   ImageBackground,
 } from 'react-native';
@@ -19,7 +18,8 @@ type Props = {
 
 const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
   const renderItem = ({ item }: any) => {
-    //console.log(item.image);
+    console.log('item: ', item);
+    //console.log('length: ', dataLoad.length);
     return (
       <View style={[styles.listContainer, dataIn.listContainerStyle]}>
         <ImageBackground
@@ -41,6 +41,7 @@ const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
       </View>
     );
   };
+  console.log('dataLoad 2: ', dataLoad);
 
   return (
     <View style={styles.container}>
