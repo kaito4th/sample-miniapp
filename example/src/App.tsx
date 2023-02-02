@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-
-import { StyleSheet, View, SafeAreaView, Text } from 'react-native';
+import type { TestDataLoad } from 'src/types';
+import { StyleSheet } from 'react-native';
 import { TestMAPP } from 'react-native-sample1';
 
 export default function App() {
-  const [values, setValues] = useState<any>([]);
+  const [values, setValues] = useState<TestDataLoad>([]);
   const onAddtoCart = (item: any) => {
     setValues([...values, item]);
   };
@@ -96,7 +96,7 @@ export default function App() {
         }}
         dataLoad={values}
         dataOut={(result: any) => {
-          console.log('result: ', result);
+          console.log('screen2: ', result);
         }}
       />
     </>

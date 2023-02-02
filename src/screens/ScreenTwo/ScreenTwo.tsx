@@ -5,9 +5,10 @@ import {
   Text,
   FlatList,
   ImageBackground,
+  TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import type { TestScreenOneDataIn, TestDataLoad, TestDataOut } from 'src/types';
-// import useViewModel from './useViewModel';
 import _ from 'lodash';
 
 type Props = {
@@ -18,27 +19,29 @@ type Props = {
 
 const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
   const renderItem = ({ item }: any) => {
-    console.log('item: ', item);
-    //console.log('length: ', dataLoad.length);
     return (
-      <View style={[styles.listContainer, dataIn.listContainerStyle]}>
-        <ImageBackground
-          source={{ uri: item.image }}
-          resizeMode="cover"
-          style={{
-            width: 100,
-            height: '100%',
-            opacity: 1,
-          }}
-          borderRadius={5}
-        >
-          <View style={[styles.overlay, dataIn.overlayStyle]}>
-            <Text style={[styles.textstyle, dataIn.textStyle]}>
-              {item.text}
-            </Text>
-          </View>
-        </ImageBackground>
-      </View>
+      <SafeAreaView>
+        <View style={[styles.listContainer, dataIn.listContainerStyle]}>
+          <TouchableOpacity onPress={() => dataOut(item)}>
+            <ImageBackground
+              source={{ uri: item.image }}
+              resizeMode="cover"
+              style={{
+                width: 100,
+                height: '100%',
+                opacity: 1,
+              }}
+              borderRadius={5}
+            >
+              <View style={[styles.overlay, dataIn.overlayStyle]}>
+                <Text style={[styles.textstyle, dataIn.textStyle]}>
+                  {item.text}
+                </Text>
+              </View>
+            </ImageBackground>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     );
   };
   console.log('dataLoad 2: ', dataLoad);

@@ -1,39 +1,20 @@
 import React from 'react';
 import type { TestScreenOneDataIn } from './types/dataIn';
-import type { TestDataLoad } from './types';
+import type { TestDataLoad, TestDataOut } from './types';
 import ScreenOne from './screens/ScreenOne/ScreenOne';
 import ScreenTwo from './screens/ScreenTwo/ScreenTwo';
 
 type Props = {
   dataLoad: TestDataLoad;
-  dataIn:
-    | ({ type: 'type a' } & TestScreenOneDataIn)
-    | ({ type: 'type b' } & TestScreenOneDataIn);
-  dataOut?: (data: any) => void;
+  dataIn: TestScreenOneDataIn;
+  dataOut: TestDataOut;
 };
 
 const TestMAPP = ({ dataLoad, dataIn, dataOut }: Props) => {
-  // const handleFoodname = (food: any) => {
-  //   foodName(food);
-  // };
-
   if (dataIn.type === 'type a') {
-    //console.log('natritrigger ba to');
-    return (
-      <ScreenOne
-        dataIn={dataIn}
-        dataLoad={dataLoad}
-        dataOut={dataOut ? dataOut : () => {}}
-      />
-    );
+    return <ScreenOne dataIn={dataIn} dataLoad={dataLoad} dataOut={dataOut} />;
   } else if (dataIn.type === 'type b') {
-    return (
-      <ScreenTwo
-        dataIn={dataIn}
-        dataLoad={dataLoad}
-        dataOut={dataOut ? dataOut : () => {}}
-      />
-    );
+    return <ScreenTwo dataIn={dataIn} dataLoad={dataLoad} dataOut={dataOut} />;
   } else {
     return <></>;
   }
