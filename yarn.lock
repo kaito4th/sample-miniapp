@@ -2149,23 +2149,14 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   "version" "15.7.5"
 
-"@types/react-native@0.67.9":
-  "integrity" "sha512-8s0v539mHd2qPIDp1rL0ChVvQh+QYUANSQhhccFbaI/D9E/b43L9lWBXItjGpSo1Jqkkcaahlrj9Ls6JiXGm7Q=="
-  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.67.9.tgz"
-  "version" "0.67.9"
+"@types/react-native@^0.66.5":
+  "integrity" "sha512-PChgvdSNebNLsp+0F9hElID2u1JMkOMme5zE3zrHeh156HN5y+tzYqyzDFCor1d2/HDah+St2zQavt8nfWfuMQ=="
+  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.66.25.tgz"
+  "version" "0.66.25"
   dependencies:
-    "@types/react" "*"
+    "@types/react" "^17"
 
-"@types/react@*":
-  "integrity" "sha512-GzzXCpOthOjXvrAUFQwU/svyxu658cwu00Q9ugujS4qc1zXgLFaO0kS2SLOaMWLt2Jik781yuHCWB7UcYdGAeQ=="
-  "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.21.tgz"
-  "version" "17.0.21"
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    "csstype" "^3.0.2"
-
-"@types/react@~17.0.21":
+"@types/react@^17", "@types/react@~17.0.21":
   "integrity" "sha512-1yIpQR2zdYu1Z/dc1OxC+MA6GR240u3gcnP4l6mvj/PJiVaqHsQPmWttsvHsfnhfPbU2FuGmo0wSITPygjBmsw=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.53.tgz"
   "version" "17.0.53"
@@ -8004,7 +7995,7 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
-"react-native-builder-bob@^0.18.2":
+"react-native-builder-bob@^0.18.3":
   "integrity" "sha512-togj+ClsPAsTK3ZFmFZVIftUIkxvN1YxJws0/6sQIlAr14U3rvtBseOQAQM0Pora1GD2aObdBVHDVhKBHWojLA=="
   "resolved" "https://registry.npmjs.org/react-native-builder-bob/-/react-native-builder-bob-0.18.3.tgz"
   "version" "0.18.3"
@@ -8040,10 +8031,10 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
-"react-native@*", "react-native@0.66.4":
-  "integrity" "sha512-9vx5dlSfQlKbbDtr8+xMon6qsmSu7jvjdXWZpEKh3XVKpUidbbODv7048gwVKX8YAel1egeR7hN8vzSeI6ssTw=="
-  "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.66.4.tgz"
-  "version" "0.66.4"
+"react-native@*", "react-native@^0.66.5":
+  "integrity" "sha512-dC5xmE1anT+m8eGU0N/gv2XUWZygii6TTqbwZPsN+uMhVvjxt4FsTqpZOFFvA5sxLPR/NDEz8uybTvItNBMClw=="
+  "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.66.5.tgz"
+  "version" "0.66.5"
   dependencies:
     "@jest/create-cache-key-function" "^27.0.1"
     "@react-native-community/cli" "^6.0.0"
