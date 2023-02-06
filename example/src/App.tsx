@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import type { TestDataLoad } from 'src/types';
-import { StyleSheet } from 'react-native';
 import { TestMAPP } from 'react-native-sample1';
 
 export default function App() {
@@ -102,16 +101,3 @@ export default function App() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
